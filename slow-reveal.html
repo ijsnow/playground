@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf8">
+    <title>Slow Reveal</title>
+  </head>
+  <body>
+    <h1>The Slow Reveal</h1>
+    <p>
+      This here is a web page, html and css just like the rest. But this web page is a bit different. Press the letter k.
+    </p>
+    <p>
+      Whoa, something happened!
+    </p>
+    <p>
+      This page has some javascript that hides each line when the page loads.
+    </p>
+    <p>
+      A portion of this javascript asks the browser to wait for you to press the letter `k` to reveal the next line.
+    </p>
+    <p>
+      In your text editor, open up `~/studio/github.com/jago-contributors/jago/playground/slow-reveal.js`.
+    </p>
+    <p>
+      This is the javascript that manages hiding/revealing each line on this webpage. It uses javascript provided by the browser to find and interact with the elements on the page as well as listen for key presses.
+    </p>
+    <p>
+      There are several ways to interact with DOM elements. In this code, we are using capabilities provided by the browser. Another way would be to use jQuery. Try to rewrite the code using jQuery. You can assume that jQuery is already loaded and accessible by referenceing `$`.
+    </p>
+    <p>
+      As you know by now, you can do the same thing in many ways and no code is perfect. The code we use to reveal the next line isn't the prettiest. Can you write it differently?
+    </p>
+    <style>
+      .hidden {
+        display: none;
+      }
+    </style>
+    <script>
+      let paragraphs = document.querySelectorAll('p');
+
+      for (let p of Array.from(paragraphs).slice(1)) {
+        p.classList.add('hidden');
+      }
+
+      document.addEventListener('keypress', function (event) {
+        if (event.key === 'j' || event.key === 'J') {
+          let i = 0;
+          let current = paragraphs.item(i);
+
+          while (current !== null && !current.classList.contains('hidden')) {
+            i++;
+            current = paragraphs.item(i);
+          }
+
+          if (current !== null) {
+            current.classList.remove('hidden');
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
