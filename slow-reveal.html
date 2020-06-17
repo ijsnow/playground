@@ -7,7 +7,7 @@
   <body>
     <h1>The Slow Reveal</h1>
     <p>
-      This here is a web page, html and css just like the rest. But this web page is a bit different. Press the letter k.
+      This here is a web page, html and css just like the rest. But this web page is a bit different. Press the letter j. (Make sure your computer is "focused" on this page by clicking it.)
     </p>
     <p>
       Whoa, something happened!
@@ -16,21 +16,23 @@
       This page has some javascript that hides each line when the page loads.
     </p>
     <p>
-      A portion of this javascript asks the browser to wait for you to press the letter `k` to reveal the next line.
+      A portion of this javascript asks the browser to wait for you to press the letter `j` to reveal the next line.
     </p>
     <p>
-      In your text editor, open up `~/studio/github.com/jago-contributors/jago/playground/slow-reveal.js`.
+      It uses functionality provided by the browser to find and interact with the elements on the page as well as listen for key presses.
     </p>
     <p>
-      This is the javascript that manages hiding/revealing each line on this webpage. It uses javascript provided by the browser to find and interact with the elements on the page as well as listen for key presses.
+    There are several ways to interact with the html elements on a webpage. In this code, we are using capabilities provided by the browser. Another way would be to use jQuery. Can you rewrite the code so that it uses <a href="https://www.w3schools.com/jquery/jquery_get_started.asp">jQuery?</a> The code source of this page is in <a href="https://github.com/ijsnow/playground/-/blob/slow-reveal.html">slow-reveal.html</a>
     </p>
     <p>
-      There are several ways to interact with DOM elements. In this code, we are using capabilities provided by the browser. Another way would be to use jQuery. Try to rewrite the code using jQuery. You can assume that jQuery is already loaded and accessible by referenceing `$`.
-    </p>
-    <p>
-      As you know by now, you can do the same thing in many ways and no code is perfect. The code we use to reveal the next line isn't the prettiest. Can you write it differently?
+      Writing a line of code is like writing a sentence. You can convey the same message with various combinations of words and no single combination is perfect. The code used to reveal the next line works but we do some extra work each time. Could you write it so that "less code" gets ran each time?
     </p>
     <style>
+      body > * {
+        max-width: 500px;
+        margin: inherit auto;
+      }
+
       .hidden {
         display: none;
       }
