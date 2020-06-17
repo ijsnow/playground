@@ -22,7 +22,7 @@
       It uses functionality provided by the browser to find and interact with the elements on the page as well as listen for key presses.
     </p>
     <p>
-    There are several ways to interact with the html elements on a webpage. In this code, we are using capabilities provided by the browser. Another way would be to use jQuery. Can you rewrite the code so that it uses <a href="https://www.w3schools.com/jquery/jquery_get_started.asp">jQuery?</a> The code source of this page is in <a href="https://github.com/ijsnow/playground/-/blob/slow-reveal.html">slow-reveal.html</a>
+    There are several ways to interact with the html elements on a webpage. In this code, we are using capabilities provided by the browser. Another way would be to use jQuery. Can you rewrite the code so that it uses <a href="https://www.w3schools.com/jquery/jquery_get_started.asp">jQuery?</a>
     </p>
     <p>
       Writing a line of code is like writing a sentence. You can convey the same message with various combinations of words and no single combination is perfect. The code used to reveal the next line works but we do some extra work each time. Could you write it so that "less code" gets ran each time?
@@ -37,28 +37,6 @@
         display: none;
       }
     </style>
-    <script>
-      let paragraphs = document.querySelectorAll('p');
-
-      for (let p of Array.from(paragraphs).slice(1)) {
-        p.classList.add('hidden');
-      }
-
-      document.addEventListener('keypress', function (event) {
-        if (event.key === 'j' || event.key === 'J') {
-          let i = 0;
-          let current = paragraphs.item(i);
-
-          while (current !== null && !current.classList.contains('hidden')) {
-            i++;
-            current = paragraphs.item(i);
-          }
-
-          if (current !== null) {
-            current.classList.remove('hidden');
-          }
-        }
-      });
-    </script>
+    <script src="index.js"></script>
   </body>
 </html>
